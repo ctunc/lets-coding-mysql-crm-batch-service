@@ -6,5 +6,4 @@ status VARCHAR(50)
 );
 
 create schema std;
-
 insert  into std.student (id,studentname,surname,status)values (1,'asdasdasd','asdfdsf','active');
