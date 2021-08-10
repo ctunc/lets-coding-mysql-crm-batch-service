@@ -1,5 +1,8 @@
 version: '3.1'
 
+networks:
+  ctunc:
+
 services:
   mysql:
     image: mysql
@@ -8,3 +11,16 @@ services:
       MYSQL_ROOT_PASSWORD: benimSifrem
     ports:
       - '3306:3306'
+
+  # Local Services -----------------------
+
+  ct-lets-coding-mysql-crm-batch-service:
+    image: lets-coding-mysql-crm-batch-service:0.0.1
+    container_name: ct-lets-coding-mysql-crm-batch-service
+    restart: always
+    networks:
+      - ctunc
+    environment:
+      CONFIG_SERVER_URL: http://ct-lets-coding-config-server-app:8761
+    ports:
+      - '8888:8888'

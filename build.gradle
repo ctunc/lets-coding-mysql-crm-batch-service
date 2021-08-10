@@ -50,7 +50,7 @@ tasks.withType(JavaCompile) {
 }
 
 bootJar {
-    mainClassName = 'com.letscoding.batch.application.SpringBatchApplication'
+    mainClassName = 'com.letscoding.batch.mysqlcrm.SpringBatchApplication'
     archiveFileName = "${archiveBaseName.get()}.${archiveExtension.get()}"
     manifest {
         attributes(
